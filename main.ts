@@ -3,10 +3,15 @@
 // MAKE STARTUP SHORTER
 // Add game choices
 let die = 0
+function on_logo_event_pressed() {
+    
+}
+
 function minigames() {
     
-    basic.showString("WIN 5")
-    basic.showString("SHAKE DIE")
+    basic.pause(200)
+    basic.clearScreen()
+    basic.showString(" SHAKE ")
     input.onGesture(Gesture.Shake, function on_gesture_shake() {
         
         die = randint(1, 6)
@@ -21,16 +26,15 @@ function minigames() {
 // rock paper scissors, snake, don't look game,hop over game
 function main() {
     for (let i = 0; i < 4; i++) {
+        // add music
         basic.showIcon(IconNames.Ghost)
         basic.clearScreen()
         basic.pause(200)
+        basic.showArrow(ArrowNames.North)
     }
-    basic.showString("A 2 PLAY B 2 QUIT")
     while (true) {
-        if (input.buttonIsPressed(Button.A)) {
+        if (input.logoIsPressed()) {
             minigames()
-        } else if (input.buttonIsPressed(Button.B)) {
-            basic.showString("BYE")
         }
         
     }

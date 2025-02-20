@@ -10,11 +10,14 @@ def on_gesture_shake():
     die = randint(1,6)
     basic.show_number(die)
 
+def on_logo_event_pressed():
+            pass
 
 def minigames():
     global die
-    basic.show_string("WIN 5")
-    basic.show_string("SHAKE DIE")
+    basic.pause(200)
+    basic.clear_screen()
+    basic.show_string(" SHAKE ")
     input.on_gesture(Gesture.SHAKE, on_gesture_shake)
 
     while die == 0:
@@ -26,15 +29,16 @@ def minigames():
 
 def main():
     for i in range(4):
+        #add music
         basic.show_icon(IconNames.GHOST)
         basic.clear_screen()
         basic.pause(200)
-        
-    basic.show_string('A 2 PLAY B 2 QUIT')
+        basic.show_arrow(ArrowNames.NORTH)
+
     while True:
-        if input.button_is_pressed(Button.A):
+        if input.logo_is_pressed():
             minigames()
-        elif input.button_is_pressed(Button.B):
-            basic.show_string('BYE')
+        
+         
 
 main()
