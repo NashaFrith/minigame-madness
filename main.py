@@ -10,7 +10,7 @@ def main():
         basic.clear_screen()
         basic.pause(200)
         
-    basic.show_string('A 4 GAMES, B TO QUIT')
+    basic.show_string('A 2 PLAY B 2 QUIT')
     while True:
         if input.button_is_pressed(Button.A):
             minigames()

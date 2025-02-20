@@ -8,7 +8,7 @@ function main() {
         basic.clearScreen()
         basic.pause(200)
     }
-    basic.showString("A 4 GAMES, B TO QUIT")
+    basic.showString("A 2 PLAY B 2 QUIT")
     while (true) {
         if (input.buttonIsPressed(Button.A)) {
             minigames()
