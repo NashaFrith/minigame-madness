@@ -1,9 +1,30 @@
 from microbit import *
-#TO DO LIST
-#ADD SHAKE AND DIE FUNCTIONALITY 
-#MAKE STARTUP SHORTER
-#Add game choices
+
 die = 0
+
+#classic snake game
+def snake():
+    pass
+
+#tilt in the opposite direction of the arrow
+def dontLook():
+    pass
+
+#tilt to catch the falling object
+def catch():
+    pass
+
+#yell to jump over the stuff
+def jumpMan():
+    pass
+
+#press the buttons quickly (include misdirection)
+def mole():
+    pass
+
+#navigate through maze
+def maze():
+    pass
 
 def on_gesture_shake():
     global die
@@ -11,7 +32,7 @@ def on_gesture_shake():
     basic.show_number(die)
 
 def on_logo_event_pressed():
-            pass
+    pass
 
 def minigames():
     global die
@@ -23,8 +44,21 @@ def minigames():
     while die == 0:
         basic.pause(10)
 
-    basic.pause(1000)
-    #rock paper scissors, snake, don't look game,hop over game
+    basic.pause(500)
+    if die == 1:
+        snake()
+    elif die == 2:
+        dontLook()
+    elif die == 3:
+        catch()
+    elif die == 4:
+        jumpMan()
+    elif die == 5:
+        mole()
+    elif die == 6:
+        maze()
+    else:
+        basic.show_icon(IconNames.SAD)
 
 
 def main():
@@ -38,7 +72,6 @@ def main():
     while True:
         if input.logo_is_pressed():
             minigames()
-        
-         
+               
 
 main()
